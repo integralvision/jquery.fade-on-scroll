@@ -90,7 +90,7 @@
 
     // Register event handler.
     $W.on('scroll.fade-on-scroll', function(ev) {
-      if ($W.scrollTop() < threshold) {
+      if ($W.scrollTop() + $W.height() < threshold) {
         return;
       }
 
