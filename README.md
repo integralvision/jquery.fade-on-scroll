@@ -1,5 +1,8 @@
 # jquery.fade-on-scroll
 
+By default, this plugin doesn't provide any animations or CSS to load elements.
+This plugin only toggle classes on elements.
+
 Load plugin and its' dependencies.
 ```HTML
 <!-- Place somewhere in the <head> of your document -->
