@@ -80,9 +80,6 @@
   FadeOnScroll.prototype.init = function() {
     var P = this
       , $W = $(window)
-      , top = P.$el.first().offset().top
-      , height = P.$el.first().outerHeight()
-      , threshold = top + (height * this.settings.threshold)
       ;
 
     // Add start class.
@@ -90,6 +87,10 @@
 
     // Register event handler.
     $W.on('scroll.fade-on-scroll', function(ev) {
+      var top = P.$el.first().offset().top
+        , height = P.$el.first().outerHeight()
+        , threshold = top + (height * P.settings.threshold)
+        ;
       if ($W.scrollTop() + $W.height() < threshold) {
         return;
       }
