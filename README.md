@@ -7,7 +7,7 @@ Load plugin and its' dependencies.
 ```HTML
 <!-- Place somewhere in the <head> of your document -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="jquery.fade-on-scroll"></script>
+<script src="jquery.fade-on-scroll.js"></script>
 ```
 
 ## Examples
