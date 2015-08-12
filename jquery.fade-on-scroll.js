@@ -2,12 +2,15 @@
  * Fade Content on Scroll.
  */
 
+/* global console */
+
 ;(function($, window, document, undefined) {
   'use strict';
 
   // Create the defaults once
   var pluginName = 'fadeContentOnScroll'
     , defaults = {
+      debug: false,
       elements: null,
       threshold: 0.4,
       length: 400,
@@ -71,6 +74,9 @@
     if (attributes.delay) {
       attributes.delay = parseInt(attributes.delay);
     }
+    if (attributes.debug) {
+      attributes.debug = parseInt(attributes.debug);
+    }
     return attributes;
   };
 
@@ -91,6 +97,15 @@
         , height = P.$el.first().outerHeight()
         , threshold = top + (height * P.settings.threshold)
         ;
+
+      if (P.settings.debug && console && console.log) {
+        console.log({
+          threshold: threshold,
+          current: $W.scrollTop() + $W.height(),
+          start: $W.scrollTop() + $W.height() < threshold
+        });
+      }
+
       if ($W.scrollTop() + $W.height() < threshold) {
         return;
       }
